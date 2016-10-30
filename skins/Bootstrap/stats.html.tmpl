@@ -4,10 +4,35 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>$BootstrapLabels.title</title>
+    <title>$station.location</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        span.cell-date {
+            color: #777;
+            font-size: 0.9em;
+            font-style: italic;
+        }
+        table.table-stats tbody tr td,
+        table.table-stats thead tr th {
+            text-align:center;
+            padding:3px;
+            vertical-align:middle;
+        }
+        table.table-stats tbody tr th {
+            vertical-align:middle;
+        }
+        tr.stats-border-top {
+            border-top:2px solid #CCC;
+        }
+        tr.stats-border-bottom {
+            border-bottom:2px solid #CCC;
+        }
+        h3 {
+            color: #32629c;
+        }
+    </style>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -37,8 +62,8 @@
             <li><a href="index.html">$BootstrapLabels.headings.front_page</a></li>
             <li class="active"><a href="#">$BootstrapLabels.headings.stats</a></li>
             <li><a href="history.html">$BootstrapLabels.headings.history</a></li>
-            <li><a href="news.html">$BootstrapLabels.headings.news</a></li>
-            <li><a href="about.html">$BootstrapLabels.headings.about</a></li>
+            <!-- <li><a href="news.html">$BootstrapLabels.headings.news</a></li>
+            <li><a href="about.html">$BootstrapLabels.headings.about</a></li> -->
           </ul>
           
           <p class="navbar-text navbar-right">
@@ -63,114 +88,291 @@
           <div class="col-md-8 main">
 
             <h3>$Labels.Generic.outTemp</h3>
-      		    <table class="table table-hover">
-      			    <thead>
-      				    <tr>
-        				    <th></th>
-        				    <th>$BootstrapLabels.timespans.today</th>
-        				    <th>$BootstrapLabels.timespans.week</th>
-        				    <th>$BootstrapLabels.timespans.month</th>
-        				    <th>$BootstrapLabels.timespans.year</th>
-        				    <th>$BootstrapLabels.timespans.ever</th>
-      				    </tr>
-      			    </thead>
-      			    <tbody>
-      				    <tr>
-        				    <td>$BootstrapLabels.minmax.max</td>
-        				    <td>$day.outTemp.max<br>$day.outTemp.maxtime</td>
-        				    <td>$week.outTemp.max<br>$week.outTemp.maxtime</td>
-        				    <td>$month.outTemp.max<br>$month.outTemp.maxtime</td>
-        				    <td>$year.outTemp.max<br>$year.outTemp.maxtime</td>
-  		              <td>$alltime.outTemp.max<br>$alltime.outTemp.maxtime</td>
-  		    		    </tr>
-  		    		    <tr>
-  		      		    <td>$BootstrapLabels.minmax.min</td>
-  		      		    <td>$day.outTemp.min<br>$day.outTemp.mintime</td>
-  		      		    <td>$week.outTemp.min<br>$week.outTemp.mintime</td>
-  		      		    <td>$month.outTemp.min<br>$month.outTemp.mintime</td>
-  		      		    <td>$year.outTemp.min<br>$year.outTemp.mintime</td>
-  		      		    <td>$alltime.outTemp.min<br>$alltime.outTemp.mintime</td>
-  		    		    </tr>
-  		     	    </tbody>
-  		        </table>
+                  <table class="table table-hover table-stats">
+                      <thead>
+                          <tr>
+                            <th></th>
+                            <th>$BootstrapLabels.timespans.today</th>
+                            <th>$BootstrapLabels.timespans.week</th>
+                            <th>$BootstrapLabels.timespans.month</th>
+                            <th>$BootstrapLabels.timespans.year</th>
+                            <th>$BootstrapLabels.timespans.ever</th>
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                            <td>$BootstrapLabels.minmax.max</td>
+                            <td>$day.outTemp.max<br><span class="cell-date">$day.outTemp.maxtime</span></td>
+                            <td>$week.outTemp.max<br><span class="cell-date">$week.outTemp.maxtime</span></td>
+                            <td>$month.outTemp.max<br><span class="cell-date">$month.outTemp.maxtime</span></td>
+                            <td>$year.outTemp.max<br><span class="cell-date">$year.outTemp.maxtime</span></td>
+                            <td>$alltime.outTemp.max<br><span class="cell-date">$alltime.outTemp.maxtime</span></td>
+                          </tr>
+                          <tr>
+                            <td>$BootstrapLabels.minmax.min</td>
+                            <td>$day.outTemp.min<br><span class="cell-date">$day.outTemp.mintime</span></td>
+                            <td>$week.outTemp.min<br><span class="cell-date">$week.outTemp.mintime</span></td>
+                            <td>$month.outTemp.min<br><span class="cell-date">$month.outTemp.mintime</span></td>
+                            <td>$year.outTemp.min<br><span class="cell-date">$year.outTemp.mintime</span></td>
+                            <td>$alltime.outTemp.min<br><span class="cell-date">$alltime.outTemp.mintime</span></td>
+                          </tr>
+                       </tbody>
+                  </table>
 
-              <h3>$Labels.Generic.rain</h3>
-		            <table class="table table-hover">
+            <h3>$Labels.Generic.rain</h3>
+              <h4>$BootstrapLabels.custom.rain.last_hours</h4>
+              <table class="table table-hover table-stats">
                   <thead>
-		                <tr>
-		                  <th></th>
-          				    <th>$BootstrapLabels.timespans.today</th>
-          				    <th>$BootstrapLabels.timespans.week</th>
-          				    <th>$BootstrapLabels.timespans.month</th>
-          				    <th>$BootstrapLabels.timespans.year</th>
-          				    </tr>
-			           </thead>
-			           <tbody>
-                <tr>
-    				      <td></td>
-      				    <td>$day.rain.sum</td>
-      				    <td>$week.rain.sum</td>
-      				    <td>$month.rain.sum</td>
-      				    <td>$year.rain.sum</td>
-    				    </tr>
-	   		    </tbody>
-		      </table>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>1h</th>
+                            <th>3h</th>
+                            <th>6h</th>
+                            <th>12h</th>
+                            <th>24h</th>
+                          </tr>
+                       </thead>
+                       <tbody>
+                        <tr>
+                          <th rowspan="2">Direct ($current.dateTime.format('%H:%M'))</th>
+                          <th>$Labels.Generic.rain</th>
+                          <td>$last_hour.rain.sum</td>
+                          <td>$three_hours.rain.sum</td>
+                          <td>$six_hours.rain.sum</td>
+                          <td>$twelve_hours.rain.sum</td>
+                          <td>$twentyfour_hours.rain.sum</td>
+                        </tr>
+                        <tr>
+                          <th>$Labels.Generic.rainRateMax</th>
+                          <td>
+                            #if $last_hour.rain.sum.raw > 0
+                                $last_hour.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $last_hour.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                          <td>
+                            #if $three_hours.rain.sum.raw > 0
+                                $three_hours.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $three_hours.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                          <td>
+                            #if $six_hours.rain.sum.raw > 0
+                                $six_hours.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $six_hours.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                          <td>
+                            #if $twelve_hours.rain.sum.raw > 0
+                                $twelve_hours.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $twelve_hours.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                          <td>
+                            #if $twentyfour_hours.rain.sum.raw > 0
+                                $twentyfour_hours.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $twentyfour_hours.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                        </tr>
+                        <tr class="stats-border-top">
+                          <th rowspan="2">&Agrave; $current.dateTime.format('%H:00')</th>
+                          <th>$Labels.Generic.rain</th>
+                          <td>$fixed_last_hour.rain.sum<br/><span class="cell-date">(depuis $fixed_last_hour.dateTime.format('%H:%M'))</span></td>
+                          <td>$fixed_three_hours.rain.sum<br/><span class="cell-date">(depuis $fixed_three_hours.dateTime.format('%H:%M'))</span></td>
+                          <td>$fixed_six_hours.rain.sum<br/><span class="cell-date">(depuis $fixed_six_hours.dateTime.format('%H:%M'))</span></td>
+                          <td>$fixed_twelve_hours.rain.sum<br/><span class="cell-date">(depuis $fixed_twelve_hours.dateTime.format('%H:%M'))</span></td>
+                          <td>$fixed_twentyfour_hours.rain.sum <br/><span class="cell-date">(depuis $fixed_twentyfour_hours.dateTime.format('%H:%M'))</span></td>
+                        </tr>
+                        <tr class="stats-border-bottom">
+                          <th>$Labels.Generic.rainRateMax</th>
+                          <td>
+                            #if $fixed_last_hour.rain.sum.raw > 0
+                                $fixed_last_hour.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $fixed_last_hour.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                          <td>
+                            #if $fixed_three_hours.rain.sum.raw > 0
+                                $fixed_three_hours.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $fixed_three_hours.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                          <td>
+                            #if $fixed_six_hours.rain.sum.raw > 0
+                                $fixed_six_hours.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $fixed_six_hours.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                          <td>
+                            #if $fixed_twelve_hours.rain.sum.raw > 0
+                                $fixed_twelve_hours.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $fixed_twelve_hours.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                          <td>
+                            #if $fixed_twentyfour_hours.rain.sum.raw > 0
+                                $fixed_twentyfour_hours.rainRate.max<br/>
+                                <span class="cell-date">&agrave; $fixed_twentyfour_hours.rainRate.maxtime.format('%H:%M')</span>
+                            #else
+                                --
+                            #end if
+                          </td>
+                        </tr>
+                   </tbody>
+              </table>
+              <h4>$BootstrapLabels.custom.rain.mean_term</h4>
+              <table class="table table-hover table-stats">
+                  <thead>
+                        <tr>
+                          <th></th>
+                              <th>$BootstrapLabels.timespans.today</th>
+                              <th>$BootstrapLabels.timespans.yesterday</th>
+                              <th>$BootstrapLabels.timespans.week</th>
+                              <th>$BootstrapLabels.timespans.month</th>
+                              <th>$BootstrapLabels.timespans.year</th>
+                              </tr>
+                       </thead>
+                       <tbody>
+                        <tr>
+                          <th>Cumuls</th>
+                          <td>$day.rain.sum</td>
+                          <td>$days_ago($days_ago=1).rain.sum</td>
+                          <td>$week.rain.sum</td>
+                          <td>$month.rain.sum</td>
+                          <td>$year.rain.sum</td>
+                        </tr>
+                        <tr>
+                          <th>$Labels.Generic.rainRateMax</th>
+                          <td>$day.rainRate.max<br/><span class="cell-date">$day.rainRate.maxtime</span></td>
+                          <td>$days_ago($days_ago=1).rainRate.max<br/><span class="cell-date">$days_ago($days_ago=1).rainRate.maxtime</span></td>
+                          <td>$week.rainRate.max<br/><span class="cell-date">$week.rainRate.maxtime</span></td>
+                          <td>$month.rainRate.max<br/><span class="cell-date">$month.rainRate.maxtime</span></td>
+                          <td>$year.rainRate.max<br/><span class="cell-date">$year.rainRate.maxtime</span></td>
+                        </tr>
+                   </tbody>
+              </table>
+
 
           <h3>$Labels.Generic.barometer</h3>
-		    <table class="table table-hover">
-			    <thead>
-				    <tr>
-				    <th></th>
-				    <th>$BootstrapLabels.timespans.today</th>
-				    <th>$BootstrapLabels.timespans.week</th>
-				    <th>$BootstrapLabels.timespans.month</th>
-				    <th>$BootstrapLabels.timespans.year</th>
-				    <th>$BootstrapLabels.timespans.ever</th>
-				    </tr>
-			    </thead>
-			    <tbody>
-				    <tr>
-				    <td>$BootstrapLabels.minmax.max</td>
-				    <td>$day.barometer.max<br>$day.barometer.maxtime</td>
-				    <td>$week.barometer.max<br>$week.barometer.maxtime</td>
-				    <td>$month.barometer.max<br>$month.barometer.maxtime</td>
-				    <td>$year.barometer.max<br>$year.barometer.maxtime</td>
-                                    <td>$alltime.barometer.max<br>$alltime.barometer.maxtime</td>
-				    </tr>
-				    <tr>
-				    <td>$BootstrapLabels.minmax.min</td>
-				    <td>$day.barometer.min<br>$day.barometer.mintime</td>
-				    <td>$week.barometer.min<br>$week.barometer.mintime</td>
-				    <td>$month.barometer.min<br>$month.barometer.mintime</td>
-				    <td>$year.barometer.min<br>$year.barometer.mintime</td>
-				    <td>$alltime.barometer.min<br>$alltime.barometer.mintime</td>
-				    </tr>
-			    </tbody>
-		    </table>
+            <table class="table table-hover table-stats">
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th>$BootstrapLabels.timespans.today</th>
+                    <th>$BootstrapLabels.timespans.week</th>
+                    <th>$BootstrapLabels.timespans.month</th>
+                    <th>$BootstrapLabels.timespans.year</th>
+                    <th>$BootstrapLabels.timespans.ever</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th>$BootstrapLabels.minmax.max</th>
+                        <td>
+                            $day.barometer.max<br/>
+                            <span class="cell-date">$day.barometer.maxtime</span>
+                        </td>
+                        <td>
+                            $week.barometer.max<br/>
+                            <span class="cell-date">$week.barometer.maxtime</span>
+                        </td>
+                        <td>
+                            $month.barometer.max<br/>
+                            <span class="cell-date">$month.barometer.maxtime</span>
+                        </td>
+                        <td>
+                            $year.barometer.max<br/>
+                            <span class="cell-date">$year.barometer.maxtime</span>
+                        </td>
+                        <td>
+                            $alltime.barometer.max<br/>
+                            <span class="cell-date">$alltime.barometer.maxtime</span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>$BootstrapLabels.minmax.min</th>
+                        <td>
+                            $day.barometer.min<br/>
+                            <span class="cell-date">$day.barometer.mintime</span>
+                        </td>
+                        <td>
+                            $week.barometer.min<br/>
+                            <span class="cell-date">$week.barometer.mintime</span>
+                        </td>
+                        <td>
+                            $month.barometer.min<br/>
+                            <span class="cell-date">$month.barometer.mintime</span>
+                        </td>
+                        <td>
+                            $year.barometer.min<br/>
+                            <span class="cell-date">$year.barometer.mintime</span>
+                        </td>
+                        <td>
+                            $alltime.barometer.min<br/>
+                            <span class="cell-date">$alltime.barometer.mintime</span>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
 
          <h3>$Labels.Generic.windSpeed</h3>
-		    <table class="table table-hover">
-			    <thead>
-				    <tr>
-				    <th></th>
-				    <th>$BootstrapLabels.timespans.today</th>
-				    <th>$BootstrapLabels.timespans.week</th>
-				    <th>$BootstrapLabels.timespans.month</th>
-				    <th>$BootstrapLabels.timespans.year</th>
-				    <th>$BootstrapLabels.timespans.ever</th>
-				    </tr>
-			    </thead>
-			    <tbody>
-				    <tr>
-				    <td>$BootstrapLabels.minmax.max</td>
-				    <td>$day.wind.max<br>$day.wind.maxtime</td>
-				    <td>$week.wind.max<br>$week.wind.maxtime</td>
-				    <td>$month.wind.max<br>$month.wind.maxtime</td>
-				    <td>$year.wind.max<br>$year.wind.maxtime</td>
-                    <td>$alltime.wind.max<br>$alltime.wind.maxtime</td>
-				    </tr>
-			    </tbody>
-		    </table>
+            <table class="table table-hover table-stats">
+                <thead>
+                    <tr>
+                    <th></th>
+                    <th>$BootstrapLabels.timespans.today</th>
+                    <th>$BootstrapLabels.timespans.week</th>
+                    <th>$BootstrapLabels.timespans.month</th>
+                    <th>$BootstrapLabels.timespans.year</th>
+                    <th>$BootstrapLabels.timespans.ever</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                    <th>$BootstrapLabels.minmax.max</th>
+                    <td>
+                        $day.windGust.max de $day.wind.gustdir.ordinal_compass<br/>
+                        <span class="cell-date">$day.windGust.maxtime</span>
+                    </td>
+                    <td>
+                        $week.windGust.max de $week.wind.gustdir.ordinal_compass<br/>
+                        <span class="cell-date">$week.windGust.maxtime</span>
+                    </td>
+                    <td>
+                        $month.windGust.max de $month.wind.gustdir.ordinal_compass<br/>
+                        <span class="cell-date">$month.windGust.maxtime</span>
+                    </td>
+                    <td>
+                        $year.windGust.max de $year.wind.gustdir.ordinal_compass<br/>
+                        <span class="cell-date">$year.windGust.maxtime</span>
+                    </td>
+                    <td>
+                        $alltime.windGust.max de $alltime.wind.gustdir.ordinal_compass<br/>
+                        <span class="cell-date">$alltime.windGust.maxtime</span>
+                    </td>
+                    </tr>
+                </tbody>
+            </table>
 
         </div>          
       </div>

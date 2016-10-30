@@ -1,5 +1,32 @@
         <div class="col-md-4">
+          <!-- Station info -->
           <div class="row">
+          <h1 class="h4">Informations</h1>
+            <table class="table table-hover">
+              <tbody>
+                  <tr>
+                    <td>Mat&eacute;riel</td>
+                    <td>$station.hardware</td>
+                  </tr>
+                  <tr>
+                    <td>$BootstrapLabels.status.latitude</td>
+                    <td>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2]</td>
+                  </tr>
+                  <tr>
+                    <td>$BootstrapLabels.status.longitude</td>
+                    <td>$station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2]</td>
+                  </tr>
+                  <tr>
+                    <td>$BootstrapLabels.status.altitude</td>
+                    <td>$station.altitude</td>
+                  </tr>
+                </tbody>
+            </table>  
+          </div>
+
+        <!-- gauges -->
+          <div class="row">
+          <h1 class="h4">Direct</h1>
               <div class="col-md-6" align="center">
                 <img src="outTempGauge.png" alt="">
                 <h5>$Labels.Generic.outTemp</h5>
@@ -32,33 +59,4 @@
                 <h5>$Labels.Generic.windGust</h5>            
               </div>          
           </div>   
-          
-          <!-- Station info -->
-          <div class="row">
-            <table class="table table-hover">
-              <tbody>
-	              <tr>
-	                <td>$BootstrapLabels.status.latitude</td>
-	                <td>$station.latitude[0]&deg; $station.latitude[1]' $station.latitude[2]</td>
-	              </tr>
-	              <tr>
-	                <td>$BootstrapLabels.status.longitude</td>
-	                <td>$station.longitude[0]&deg; $station.longitude[1]' $station.longitude[2]</td>
-	              </tr>
-	              <tr>
-	                <td>$BootstrapLabels.status.altitude</td>
-	                <td>$station.altitude</td>
-	              </tr>
-	              <tr>
-	                <td>$BootstrapLabels.status.station_uptime</td>
-	                <td>$station.uptime</td>
-	              </tr>
-	              <tr>
-	                <td>$BootstrapLabels.status.server_uptime</td>
-	                <td>$station.os_uptime</td>
-	              </tr>
-	            </tbody>
-            </table>  
-          </div>        
-          
         </div>
