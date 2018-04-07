@@ -32,6 +32,11 @@
 <realtime><data realtime="high_windspeed">$day.wind.max.formatted<!--hiWindSpeed--></data></realtime>
 <realtime><data realtime="windchill">$current.windchill.formatted<!--windChill--></data></realtime>
 <realtime><data realtime="low_windchill">$day.windchill.min.formatted<!--lowWindchill--></data></realtime>
+
+<!--WIND GUST-->
+<realtime><data realtime="windgustdir">$current.windGustDir.ordinal_compass<!--windGustDirection--></data></realtime>
+<realtime><data realtime="windgust">$current.windGust.formatted<!--windGust--></data></realtime>
+
 <!--DEWPOINT-->
 <realtime><data realtime="dew">$current.dewpoint.formatted<!--outsideDewPt--></data></realtime>
 <realtime><data realtime="high_dew">$day.dewpoint.max.formatted<!--hiDewpoint--></data></realtime>

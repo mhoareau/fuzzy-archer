@@ -21,6 +21,7 @@ class BootstrapInstaller(setup.ExtensionInstaller):
         files=[('skins/Bootstrap',
             ['skins/Bootstrap/about.html.tmpl',
              'skins/Bootstrap/history.html.tmpl',
+             'skins/Bootstrap/direct.html.tmpl',
              'skins/Bootstrap/index.html.tmpl',
              'skins/Bootstrap/menu.html.tmpl',
              'skins/Bootstrap/month.html.tmpl',
