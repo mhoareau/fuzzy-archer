@@ -32,11 +32,9 @@
 <realtime><data realtime="high_windspeed">$day.wind.max.formatted<!--hiWindSpeed--></data></realtime>
 <realtime><data realtime="windchill">$current.windchill.formatted<!--windChill--></data></realtime>
 <realtime><data realtime="low_windchill">$day.windchill.min.formatted<!--lowWindchill--></data></realtime>
-
 <!--WIND GUST-->
 <realtime><data realtime="windgustdir">$current.windGustDir.ordinal_compass<!--windGustDirection--></data></realtime>
 <realtime><data realtime="windgust">$current.windGust.formatted<!--windGust--></data></realtime>
-
 <!--DEWPOINT-->
 <realtime><data realtime="dew">$current.dewpoint.formatted<!--outsideDewPt--></data></realtime>
 <realtime><data realtime="high_dew">$day.dewpoint.max.formatted<!--hiDewpoint--></data></realtime>
@@ -51,11 +49,17 @@
 <realtime><data realtime="rain_rate">$current.rainRate.formatted<!--rainRate--></data></realtime>
 <realtime><data realtime="high_rain_rate">$day.rainRate.max.formatted<!--hiRainRate--></data></realtime>
 <realtime><data realtime="storm_rate">$day.rain.sum.formatted<!--dailyRain--></data></realtime>
+<realtime><data realtime="yearsrain">$year.rain.sum.formatted<!--yearlyRain--></data></realtime>
+<realtime><data realtime="monthsrain">$month.rain.sum.formatted<!--monthlyRain--></data></realtime>
+<realtime><data realtime="last1hsrain">$last_hour.rain.sum.formatted<!--last1hoursRain--></data></realtime>
+<realtime><data realtime="last3hsrain">$three_hours.rain.sum.formatted<!--last3hoursRain--></data></realtime>
+<realtime><data realtime="last24hsrain">$twentyfour_hours.rain.sum.formatted<!--last24hoursRain--></data></realtime>
+
 <!--UNITS-->
-<realtime><data units="windunit">Kn<!--windUnit--></data></realtime>
+<realtime><data units="windunit">km/h<!--windUnit--></data></realtime>
 <realtime><data units="rainunit">mm<!--rainUnit--></data></realtime>
 <realtime><data units="rateunit">mm/hr-<!--rateUnit--></data></realtime>
-<realtime><data units="barunit">mb<!--barUnit--></data></realtime>
+<realtime><data units="barunit">hPa<!--barUnit--></data></realtime>
 <realtime><data units="tempunit">C<!--tempUnit--></data></realtime>
 <realtime><data units="humunit">%<!--humUnit--></data></realtime>
 </maintag>
